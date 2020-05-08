@@ -29,23 +29,22 @@ class SignIn extends React.Component {
     //dynamic change what you type in on line
     handleChange = (event) => {
         const {value, name} = event.target;
-
         this.setState({[name]: value});
     }
 
     render(){
         return(
             <div className='sign-in'>
-                <h2>I already have an account</h2>
+                <h2 className='title'>I already have an account</h2>
                 <span>Sign in with your email and password.</span>
 
-                <form onClick={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <FormInput 
                         name='email' 
                         type='email' 
                         handleChange={this.handleChange} 
                         value={this.state.email}
-                        label='email'
+                        label='Email'
                         required
                     />
                     <FormInput 
@@ -53,7 +52,7 @@ class SignIn extends React.Component {
                         type='password' 
                         handleChange={this.handleChange} 
                         value={this.state.password}
-                        label='password'
+                        label='Password'
                         required
                     />
                     <div className='buttons'>
